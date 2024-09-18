@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    color: #000;
+    background-image: url(https://imgv3.fotor.com/images/gallery/Light-gradient-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 14pt;
+}
+
+p{
+    color: rgb(168, 16, 41);
+    text-align: right;
+    text-decoration: line-through;
+    text-transform: uppercase;
+}
+
+ul{
+    list-style-image: url(../images.png);
+    list-style-position: inside;
+}
+
+table{
+    width: 800px;
+    height: 500px;
+    border: 5px  rebeccapurple;
+}
+
+table th{
+    height: 50px;
+}

@@ -1,0 +1,43 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    color: #000;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 15pt;
+    justify-content: center;
+}
+
+p {
+    color: white;
+    text-align: justify;
+}
+
+table {
+    width: 1100px;
+    height: 200px;
+    border: 5px dashed rgb(229, 255, 0);
+    background-color: rgb(39, 152, 124);
+    border-spacing: 30px;
+}
+
+span {
+    font-style: italic;
+    text-decoration: underline;
+    color: #f2ff00;
+}
+
+h1 {
+    color: white;
+    text-align: left;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+
+img {
+    width: 170px;
+    height: 200px;
+    align-items: center;
+}

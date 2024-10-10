@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario fauna</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/estilos.css"> 
+</head>
+<body>
+    <h1 align="left">Contáctanos</h1>
+    <p align="left">Por favor llena el formulario para enviarte más información</p>
+    <br /> <br />
+    <form align="left" name="form" action="imagenes.html" method="post" target="_self"></form>
+        <label for="name">Tu nombre</label>
+        <input type="text" name="name" id="name" placeholder="Primer nombre">
+        <input type="text" name="name" id="apellido" placeholder="Primer apellido">
+        <br /> <br />
+        <label for="email">Tu correo electrónico</label>
+        <input type="email" name="emailPer" id="email" placeholder="ej hola@contact.net">
+        <br /> <br />
+        <label for="telefono">Tu correo electrónico</label>
+        <input type="tel" name="telPer" id="telefono1" required placeholder="###" maxlength="3">
+        <input type="tel" name="telPer" id="telefono2" required placeholder="###" maxlength="3">
+        <input type="tel" name="telPer" id="telefono3" required placeholder="####" maxlength="4">
+        <br /> <br />
+        <label for="razon" required>Asunto del mensaje</label>
+        <select name="razon">
+        <option selected value="0"> Elige un asunto </option>
+        <option value="1">Solicitar más información</option>
+        <option value="2">Solicitar hablar con un experto</option>
+        <option value="3">Otro</option>
+        </select>
+        <br /> <br />
+        <label for="observaciones" required>Mensaje</label>
+        <textarea rows="5" cols="55" name="observaciones"> </textarea>
+        <br /> <br />
+        <input type="submit" value="Enviar formulario">
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <title>Mi perfil</title>
+    <link rel="stylesheet" href="../assets/css/stylesUsuario.css">
+</head>
+
+<body>
+    <header class="headerAzul">
+        <button class="menu-btn" onclick="window.location.href='#';">
+            <img src="../assets/img/menu.png" alt="Button Menu">
+        </button>
+        <a href="../views/inicioSesion.html" class="login-btn">Iniciar sesión</a>
+    </header>
+
+    <div class="perfil">
+        <div class="containerPerfil">
+            <div class="tituloPerfil">
+                <h2>Información de tu perfil</h2>
+                <button class="edit-btn" onclick="window.location.href='../views/editarPerfil.html';">Editar perfil</button>
+            </div>
+            <div class="profile-info">
+                <p><span>Nombres:</span> Nombres del usuario</p>
+                <p><span>Apellidos:</span> Apellidos del usuario</p>
+                <p><span>Correo electrónico:</span> Correo electrónico del usuario</p>
+            </div>
+            <div class="animadoImagen">
+                <img src="../assets/img/azulAnimado.png" alt="Imagen de perfil">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

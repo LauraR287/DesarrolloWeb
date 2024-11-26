@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <title>Editar perfil</title>
+    <link rel="stylesheet" href="/css/stylesUsuario.css">
+
+</head>
+
+<body>
+    <header class="headerAzul">
+        <a href="/actividades" class="login-btn">Actividades</a>
+        <a href="/examenes" class="login-btn">Exámenes</a>
+        <a href="/perfil" class="login-btn">Mi perfil</a>
+        <a href="/pantallaPrincipal" class="login-btn">Cerrar sesión</a>
+    </header>
+
+    <div class="editar">
+        <div class="containerEditar">
+            <button type="button" class="back-btn-Rojo" onclick="window.location.href='/perfil';">Atrás</button>
+            <h2>¡Es hora de editar tu perfil!</h2>
+
+            <form class="form-profile" action="/actualizarPerfil" method="POST">
+                <div class="input-group-full-editar">
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombre" placeholder="Nombres del usuario" value="<%= usuario.nombre %>">
+                </div>
+                <div class="input-group-full-editar">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellido" placeholder="Apellidos del usuario" value="<%= usuario.apellido %>">
+                </div>
+                <div class="input-group-full-editar">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="Correo del usuario" value="<%= usuario.correo %>">
+                </div>
+                <button type="submit" class="save-btn" onclick="window.location.href='/perfil';">Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

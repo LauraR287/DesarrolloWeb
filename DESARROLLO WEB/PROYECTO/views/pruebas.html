@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap">
+    <title>English Fluent Way</title>
+    <style>
+        /* Reset de márgenes y padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Gelasio', serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        /* Encabezado */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #f98787, #f4403a);
+            padding: 10px 30px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            font-family: 'Antonio', sans-serif;
+            font-size: 24px;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: url('../assets/img/fondonicio.webp') no-repeat center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Antonio', sans-serif;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-buttons a {
+            text-decoration: none;
+            background: #f4403a;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-buttons a:hover {
+            background: #952723;
+        }
+
+        /* Sección de Ventajas */
+        .benefits {
+            text-align: center;
+            padding: 50px 20px;
+            background: #ffffff;
+        }
+
+        .benefits h2 {
+            font-family: 'Antonio', sans-serif;
+            font-size: 36px;
+            color: #f4403a;
+            margin-bottom: 20px;
+        }
+
+        .benefits .benefit {
+            display: inline-block;
+            width: 30%;
+            margin: 15px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits .benefit img {
+            width: 260px;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Cursos Destacados */
+        .courses {
+            background: #ff840053;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .courses h2 {
+            font-family: 'Antonio', sans-serif;
+            font-size: 36px;
+            color: #f4403a;
+            margin-bottom: 20px;
+        }
+
+        .courses .course {
+            display: inline-block;
+            width: 30%;
+            margin: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .courses .course img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .courses .course h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonios */
+        .testimonials {
+            padding: 50px 20px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .testimonials h2 {
+            font-family: 'Antonio', sans-serif;
+            font-size: 36px;
+            color: #f4403a;
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .testimonial p {
+            font-style: italic;
+        }
+
+        .testimonial span {
+            font-weight: bold;
+            color: #f4403a;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f98787;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <h1>Fluent Way</h1>
+        <nav>
+            <a href="#benefits">Ventajas</a>
+            <a href="#courses">Cursos</a>
+            <a href="#testimonials">Testimonios</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Domina el Inglés</h1>
+        <p>Aprende inglés con <span>Luisa</span> de forma fácil y efectiva.</p>
+        <div class="cta-buttons">
+            <a href="inicioSesion.html">Comenzar ahora</a>
+            <a href="#benefits">Más información</a>
+        </div>
+    </div>
+
+    <!-- Ventajas -->
+    <section id="benefits" class="benefits">
+        <h2>¿Por qué elegirnos?</h2>
+        <div class="benefit">
+            <p><strong>Clases dinámicas:</strong>  </p>
+            <p></p>Nuestras clases están diseñadas para mantener tu interés y motivación, combinando actividades interactivas, juegos y ejercicios prácticos.  
+            Creemos que la mejor forma de aprender un idioma es a través de la práctica constante y métodos que hagan el aprendizaje divertido y efectivo.</p>
+        </div>
+        <div class="benefit">
+            <p><strong>Material personalizado:</strong></p>
+            <p>Olvídate de los recursos genéricos. Nuestro material se adapta específicamente a tu nivel de inglés y tus metas, ya sea mejorar tus habilidades de conversación, preparación para exámenes internacionales o aprender inglés profesional.  
+            Todo está creado para garantizar que avances de manera rápida y efectiva.</p>
+        </div>
+        <div class="benefit">
+            <p><strong>Acceso 24/7:</strong> </p> 
+            <p></p>Aprende inglés a tu ritmo y en tu tiempo libre. Nuestra plataforma está disponible las 24 horas del día, los 7 días de la semana, para que puedas estudiar desde cualquier lugar.  
+            Ya no tendrás que preocuparte por horarios rígidos o limitaciones de tiempo; tu aprendizaje está en tus manos.</p>
+        </div>
+    </section>
+    
+    
+
+    <!-- Cursos Destacados -->
+    <section id="courses" class="courses">
+        <h2>Cursos Destacados</h2>
+        <div class="course">
+            <img src="../assets/img/principiante.webp" alt="Curso 1">
+            <h3>Inglés Básico</h3>
+            <p>Perfecto para principiantes.</p>
+        </div>
+        <div class="course">
+            <img src="../assets/img/intermedio.webp" alt="Curso 2">
+            <h3>Inglés Intermedio</h3>
+            <p>Mejora tu gramática y vocabulario.</p>
+        </div>
+        <div class="course">
+            <img src="../assets/img/avanzado.webp" alt="Curso 3">
+            <h3>Inglés Avanzado</h3>
+            <p>Domina el idioma.</p>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonials" class="testimonials">
+        <h2>Testimonios</h2>
+        <div class="testimonial">
+            <p>"Gracias a Fluent Way, ahora me siento seguro hablando inglés en mi trabajo."</p>
+            <span>- Juan Pérez</span>
+        </div>
+        <div class="testimonial">
+            <p>"Las clases son dinámicas y los profesores son increíbles."</p>
+            <span>- Ana López</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Fluent Way. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

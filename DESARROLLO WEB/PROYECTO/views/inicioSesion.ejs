@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="/css/stylesUsuario.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="login">
+        <button class="inicio-btn" onclick="window.location.href='/pantallaPrincipal';">
+            <img src="/img/menu.png" alt="Button Menu">
+        </button>
+        <div class="containerLogIn">
+            <div class="login-box">
+                <h1>Iniciar Sesion</h1>
+                <p>¡Inicia sesión y desata tu superpoder en inglés!</p>
+                <form class="formRojo" action="/usuarios/login" method="post">
+                    <input type="email" name= "correo" placeholder="Ingresa tu correo electrónico" required>
+                    <input type="password" name="contraseña" placeholder="Ingresa tu contraseña" required>
+                    <button type="submit">Iniciar sesion</button>
+                    <div class="links">
+                        <a href="/recuperarCuenta">¿Olvidaste tu contraseña?</a>
+                        <a href="/crearCuenta">Crear una cuenta</a>
+                    </div>
+                </form>
+                <% if (typeof mensajeAlerta !== 'undefined' && mensajeAlerta) { %>
+                    <script>
+                        Swal.fire({
+                            title: 'Aviso',
+                            text: '<%= mensajeAlerta %>',
+                            icon: '<%= tipoAlerta %>',
+                            confirmButtonText: 'Ok'
+                        });
+                    </script>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

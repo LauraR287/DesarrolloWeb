@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <title>Recuperar cuenta</title>
+    <link rel="stylesheet" href="/css/stylesUsuario.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="recuperar">
+        <button class="inicio-btn" onclick="window.location.href='pantallaPrincipal';">
+            <img src="/img/menu.png"  alt="Button Menu">
+        </button>
+        <div class="containerRecuperar">
+            <div class="recuperar-box">
+                <button type="button" class="back-btn" onclick="window.location.href='/inicioSesion';">Atrás</button>
+                <h1>Recupera tu cuenta</h1>
+                <p>No te preocupes, te ayudaremos a recuperar el acceso.</p>
+                <span>Ingresa tu correo electrónico para restablecer tu contraseña.</span>
+                <form class="formAzul" action="/usuarios/recuperar" method="post">
+                    <input type="email" name="correo" placeholder="Ingresa tu correo electrónico" required>
+                    <button type="submit">Enviar código</button>
+                </form>
+                <% if (typeof mensajeAlerta !== 'undefined' && mensajeAlerta) { %>
+                    <script>
+                        Swal.fire({
+                            title: 'Aviso',
+                            text: '<%= mensajeAlerta %>',
+                            icon: '<%= tipoAlerta %>',
+                            confirmButtonText: 'Ok'
+                        });
+                    </script>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

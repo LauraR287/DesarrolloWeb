@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fábulas</title>
+    <title>Document</title>
 </head>
+
 <body>
-    <h1 align="center"> Fábulas</h1>
-        <ul>Ejemplos de fábulas
-        <li><a href="../Desarrollo web/Views/fauna.html">Fauna Colombiana</a></li>
-        <li><a href="../Desarrollo web/Views/fabula2.html">Tablas de fábulas</a></li>
-        <li><a href="../Desarrollo web/Views/stop.html">Stop</a></li>
-        </ul>
+    <script>
+        // Algoritmo: Entrada -> Proceso -> Salida
+        // Función de entrada
+        let numeroEntrada = parseInt(prompt("Ingrese un número por favor"))
+        // Función de salida
+        alert("El número ingresado es " + numeroEntrada)
+
+        if (numeroEntrada % 2 == 0) {
+            console.log(`El número ${numeroEntrada} es par`)
+            alert(`El número ${numeroEntrada} es par`)
+        } else {
+            alert(`El número no ${numeroEntrada} es par`)
+        }
+    </script>
 </body>
+
 </html>

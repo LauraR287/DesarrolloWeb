@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/assets/css/actividades.css">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Gelasio:wght@400;700&display=swap" rel="stylesheet">
+    <title>Titulo</title>
+    <script src="/assets/js/aprendizaje.js"></script>
+</head>
+<body>
+    <div class="background-azul-alreves">
+        <h1 class="page-title-blanco">Titulo</h1>
+
+        <!-- Primera tarjeta con espacio superior ajustado -->
+        <div class="card">
+            <h2>Titulo</h2>
+            <hr>
+            <p>
+                Explicación explicación explicación explicación explicación explicación explicación explicación explicación...
+            </p>
+        </div>
+
+        <!-- Segunda tarjeta con espacio entre tarjetas -->
+        <div class="card">
+            <h2>Ejemplos</h2>
+            <hr>
+            <p>
+                Ejemplos
+            </p>
+        </div>
+
+        <!-- Botón de siguiente -->
+         <div class="button-container">
+            <button class="next-button" onclick="window.location.href='actividades.html';">Atrás</button>
+            <button class="publicar-button" onclick="window.location.href='PreguntaActividades.html';">Actividad</button>
+         </div>
+        
+    </div>
+
+    <script>
+        async function cargarActividad() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+
+            try {
+                const response = await fetch(`http://localhost:3000/api/actividades/${id}`);
+                const actividad = await response.json();
+
+                // Actualizar el título de la actividad
+                document.querySelector('.titulo-actividad').textContent = actividad.titulo;
+
+                // Renderizar las secciones dinámicamente
+                const seccionesContainer = document.getElementById('secciones-container');
+                actividad.secciones.forEach((seccion) => {
+                    const seccionHtml = `
+                        <div>
+                            <h2>${seccion.titulo}</h2>
+                            <p>${seccion.texto}</p>
+                        </div>
+                    `;
+                    seccionesContainer.insertAdjacentHTML('beforeend', seccionHtml);
+                });
+            } catch (error) {
+                console.error('Error al cargar la actividad:', error);
+                document.querySelector('.titulo-actividad').textContent = 'Error al cargar la actividad';
+            }
+        }
+
+        function irAActividad() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            window.location.href = `PreguntaActividades.html?id=${id}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', cargarActividad);
+    </script>
+
+    <script src="aprendizaje.js"></script>
+
+</body>
+</html>

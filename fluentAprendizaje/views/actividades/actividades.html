@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <title>Activities</title>
+    <link rel="stylesheet" href="../../public/assets/css/actividades.css">
+    <script src="/assets/aprendizaje.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="../views/actividades.html" class="login-btn">Actividades</a>
+        <a href="../views/examenes.html" class="login-btn">Exámenes</a>
+        <a href="../views/perfil.html" class="login-btn">Mi perfil</a>
+        <a href="../views/pantallaPrincipal.html" class="login-btn">Cerrar sesión</a>
+    </header>
+ 
+    <div class="background">
+
+        <div class="title-container">
+            <h1 class="page-title">LEARNING TOPICS</h1>
+            <button class="grades-button" onclick="window.location.href='crearActividad.html';">Nueva actividad</button>
+            <button class="grades-button" onclick="window.location.href='activitiesGrades.html';">Notas</button>
+        </div>
+
+        <hr class="title-hr">        
+
+        <div class="activities-container">
+            <div class="activity-box">
+                <p>Tema 1</p>
+                <img class="image-top" src="../../public/assets/img/puntos.png" alt="Opciones"  onclick="event.stopPropagation(); toggleMenu(event)"> 
+                <img class="image-bottom" src="../../public/assets/img/punta.png" alt="Play icon" onclick="window.location.href='IntroActividades.html';" style="cursor: pointer;">    
+                <div class="dropdown-menu">
+                    <button onclick="editActivity(event)">Editar</button>
+                    <button onclick="deleteActivity(event)">Eliminar</button>
+                </div>
+            </div>
+            <div class="activity-box">
+                <p>Tema 2</p>
+                <img class="image-top" src="../../public/assets/img/puntos.png" alt="Opciones" onclick="event.stopPropagation(); toggleMenu(event)">
+                <img class="image-bottom" src="../../public/assets/img/punta.png" alt="Play icon"  onclick="window.location.href='PreguntaActividades.html';" style="cursor: pointer;">    
+                <div class="dropdown-menu">
+                    <button onclick="editActivity(event)">Editar</button>
+                    <button onclick="deleteActivity(event)">Eliminar</button>
+                </div>
+            </div>
+            <div class="activity-box">
+                <p>Tema 3</p>
+                <img class="image-top" src="../../public/assets/img/puntos.png" alt="Opciones" onclick="event.stopPropagation(); toggleMenu(event)">
+                <img class="image-bottom" src="../../public/assets/img/punta.png" alt="Play icon" onclick="window.location.href='PreguntaActividades.html';" style="cursor: pointer;">    
+                <div class="dropdown-menu">
+                    <button onclick="editActivity(event)">Editar</button>
+                    <button onclick="deleteActivity(event)">Eliminar</button>
+                </div>
+            </div>
+            <div class="activity-box">
+                <p>Tema 4</p>
+                <img class="image-top" src="../../public/assets/img/puntos.png" alt="Opciones" onclick="event.stopPropagation(); toggleMenu(event)">
+                <img class="image-bottom" src="../../public/assets/img/punta.png" alt="Play icon" onclick="window.location.href='PreguntaActividades.html';" style="cursor: pointer;"">    
+                <div class="dropdown-menu">
+                    <button onclick="editActivity(event)">Editar</button>
+                    <button onclick="deleteActivity(event)">Eliminar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button-container-intro">
+            <button class="next-button" >Atrás</button>
+        </div>
+        
+    </div>
+
+<script src="../../assets/js/aprendizaje.js"></script>
+</body>
+</html>

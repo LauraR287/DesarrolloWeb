@@ -1,0 +1,549 @@
+body {
+    margin: 0;
+    font-family: 'Gelasio', serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+       box-sizing: border-box;
+}
+    
+/* Encabezado */
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(to bottom, #82e4f5, #0097b2);
+    padding: 10px 30px;
+    height: 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/*CONTENIDO*/
+    .background {
+        position: relative;
+        background-size: 100% 50%;
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 100px;}
+.background-azul {
+    background: url('../../assets/img/fondoAzul.png') no-repeat center bottom;
+    background-size: cover; /* Asegura que cubra toda la pantalla */
+    background-color: #daf1f7; /* Color adicional para áreas sin imagen */
+    min-height: 100vh; /* Asegura que cubra al menos toda la altura de la ventana */
+    background-size: 100% 70%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 70px;
+}
+.background-azul-alreves {
+    background: url('../../assets/img/fondoAzulAlreves.png') no-repeat center top; 
+    background-size: cover; 
+    background-color: #daf1f7; 
+    min-height: 100vh; 
+    background-size: 100% 70%; 
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    padding: 70px;
+}
+.background-basico {
+    background-size: cover; 
+    background-color: #daf1f7; 
+    min-height: 100vh; 
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    padding: 70px;
+}
+    .title-hr {
+        border: none;
+        border-top: 1px solid #ccc; 
+        width: 85%; 
+        margin: 0 auto 30px auto;
+    }
+    .page-title {
+        font-size: 50px;
+        font-family: 'Antonio', sans-serif;
+        color: #000000;
+        margin: 0;
+        white-space: nowrap;
+    }
+    .page-title-crear {
+        font-size: 40px;
+        font-family: 'Antonio', sans-serif;
+        color: #000000;
+        margin: 0;
+        white-space: nowrap;
+    }
+/*VISTA TEMAS --------------------------------------------------------------------------------------------------------------------*/
+/* Contenedor actividades */
+    .activities-container {
+        width: 85%; 
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 10px;
+        gap: 20px;}
+    .activity-box {
+        position: relative;
+        background-color: #F5F5F5;
+        border-radius: 40px;
+        width: calc(40% - 25px);
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        min-height: 175px;
+        margin-right: 70px;
+        margin-left: 70px;
+        margin-top: 10px;
+        margin-bottom: 20px;}
+    .activity-box p {
+        font-size: 26px;
+        color: #000000;
+        margin-left: 55px;
+        margin-top: 30px;}
+    .image-bottom {
+        width: 45px;
+        height: auto;
+        margin-right: 10px;
+        margin-top: 90px;}
+
+    .image-top {
+        position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+        top: 50px; /* Ajustar para colocar la imagen más arriba en la esquina */
+        left: 40px; /* Colocar la imagen cerca del borde derecho */
+        width: 20px;
+        height: auto;
+}
+
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 45px;
+    right: 130px;
+    left: 65px;
+    background-color: white;
+    border: 2px solid #0097B2; /* Cambia el color del borde */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000; /* Asegúrate de que se muestre por encima de otros elementos */
+}
+
+
+.dropdown-menu.show-menu {
+    display: block; /* Mostrar el menú cuando se hace clic en los tres puntos */
+}
+
+.dropdown-menu button {
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    border: none;
+    background: none;
+    padding: 15px; /* Ajusta el padding si es necesario */
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Gelasio', serif;
+}
+
+
+.dropdown-menu button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Contenedor que agrupa el título y el botones*/
+.title-container {
+    display: flex; 
+    justify-content: flex-start;  /* Alinear los elementos al principio */
+    align-items: center; 
+    width: 85%; 
+    margin: 0 auto; 
+    margin-bottom: 20px;
+    gap: 15px;  /* Añadir espacio entre los elementos */
+    margin-top: 20px;
+}
+.grades-button {
+    font-family: 'Gelasio', serif;
+    margin-top: 10px; 
+    padding: 10px 10px;
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 170px;
+}
+
+.page-title {
+    margin-right: 39vw;
+}
+
+/* Contenedor GRADES TOPIC ---------------------------------------------------------------------------------------------------------*/
+.list-container {
+    background-color: #F5F5F5; 
+    border-radius: 15px; 
+    width: 70%;
+    margin: 0 auto; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px;
+    margin-bottom: 20px;}
+.list-item {
+    padding: 15px 20px; 
+    font-size: 18px;
+    color: #000000;
+    border-bottom: 1px solid #ccc;}
+.list-item:last-child {
+    border-bottom: none;
+}
+
+/*VISTA PREGUNTAS ACTIVIDADES---------------------------------------------------------------------------------------------*/
+.page-title-blanco {
+    font-size: 50px;
+    font-family: 'Antonio', sans-serif;
+    color: #ffffff;
+    margin: 0;
+}
+.card {
+    background-color: #ffffff;
+    border-radius: 35px;
+    padding: 35px;
+    margin: 40px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+    min-height: 180px;
+    flex-direction: column;
+    justify-content: center;}
+.card p {
+    padding: 15px 30px 15px 30px;
+    color: #000000; 
+    text-align: center;}
+hr {
+    border: none; 
+    border-top: 1px solid #ccc; 
+    margin-top: 10px;}
+.options label {
+    display: block;
+    margin-bottom: 10px; 
+    margin-left: 50px;}
+.options input[type="radio"] {
+    margin-right: 10px;}
+.options input[type="radio"] {
+    position: absolute;
+    opacity: 0;}
+.options label {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;}
+.options label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border: 1px solid #ADA6A6;
+    border-radius: 40%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, border-color 0.3s ease;}
+.options input[type="radio"]:checked + label::before {
+    background-color: #0097B2;
+    border-color: #ADA6A6;}
+
+.next-button:hover {
+    background-color: #008c9e;}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 20px; 
+    background-color: #ffffff;
+    border: 1px solid #ADA6A6;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);}
+
+.next-button {
+    font-family: 'Gelasio', serif;
+    padding: 10px 20px;
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 132px;}
+.next-button:hover {
+    background-color: #008c9e;}
+
+/*VISTA CREAR TOPIC------------------------------------------------------------------------------------------------------*/
+.create-box {
+    position: relative;
+    background-color: #ffffff;
+    width: 85%; 
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: flex-start;
+    padding: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    gap: 20px;
+    border-radius: 40px;
+}
+
+form {
+    width: 100%; /* Asegúrate de que el formulario ocupe todo el ancho del contenedor */
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold; 
+}
+
+input[type="text"] {
+    width: calc(100% - 20px); /* Asegura que el input ocupe el 100% del contenedor menos el padding */
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #008c9e;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho */
+}
+
+.option-container {
+    display: flex;
+    align-items: center; /* Alinea el input de radio con el campo de texto */
+    gap: 15px; /* Añade espacio entre el círculo y la caja de texto */
+    width: 100%;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+input[type="radio"] {
+    margin-left: 10px; /* Añade un poco de margen para separar el radio del borde izquierdo */
+}
+
+.nuevaSeccion-button {
+    font-family: 'Gelasio', serif;
+    padding: 10px 20px;
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 162px;
+    margin-bottom: 20px;
+}
+.publicar-button {
+    font-family: 'Gelasio', serif;
+    padding: 10px 20px;
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 132px;
+    margin-left: auto; /* Empuja el botón hacia el borde derecho */
+    display: block; /* Asegura que el botón ocupe todo el ancho disponible a la izquierda */
+    }
+
+    .next-button {
+        font-family: 'Gelasio', serif; 
+        padding: 10px 20px;
+        background-color: #0097B2;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        width: 132px;
+        align-self: flex-end;
+        margin-right: auto}
+    .card-actividad {
+        background-color: #ffffff;
+        border-radius: 35px;
+        padding: 15px;
+        margin: 40px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+        min-height: 180px;
+        display: flex; /* Usar flex para dividir en columnas */
+        flex-direction: row; /* Alinear las columnas en fila */
+        justify-content: space-between; /* Espacio entre las columnas */
+        gap: 20px; /* Espacio entre las dos columnas */
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between; /* Asegura que los botones estén en los extremos del contenedor */
+        align-items: center; /* Alinea verticalmente los botones */
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+        padding: 20px; /* Espacio adicional si es necesario */
+    }
+    .button-container-intro {
+        display: flex;
+        justify-content: space-between; /* Asegura que los botones estén en los extremos del contenedor */
+        align-items: center; /* Alinea verticalmente los botones */
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+        padding: 20px; /* Espacio adicional si es necesario */
+    }
+    
+    .column {
+        flex: 1; /* Las columnas tendrán el mismo ancho */
+    }
+    
+    .column-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px; /* Espacio dentro de la columna izquierda */
+        font-size: 20px;
+    }
+    
+    .column-right {
+        display: flex;
+        align-items: center; /* Centrar la imagen verticalmente */
+        justify-content: center; /* Centrar la imagen horizontalmente */
+        padding: 20px; /* Espacio dentro de la columna derecha */
+    }
+    
+    .separator {
+        border: none; /* Elimina el borde predeterminado */
+        border-top: 2px solid #0097B2; /* Crea una línea azul de 2px de grosor */
+        width: 100%; /* Asegura que la línea ocupe todo el ancho del contenedor */
+        margin-bottom: 15px;
+        margin-left: 0;
+    }
+
+    .imagen-actividad {
+        max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+        max-height: 300px; /* Limita la altura máxima a 300px */
+        width: auto; /* Ajusta el ancho automáticamente */
+        height: auto; /* Mantiene la proporción original */
+    }
+    
+    .separator-gris {
+        border: none; /* Elimina el borde predeterminado */
+        border-top: 2px solid #ADA6A6; /* Crea una línea azul de 2px de grosor */
+        width: 100%; /* Asegura que la línea ocupe todo el ancho del contenedor */
+        margin-bottom: 15px;
+    }
+
+    /*VISTA NOTA -------------------------------------------------------------------------------------------------*/
+
+    .background-result {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 100vh;
+        background: url('../../assets/img/fondoAzulAlreves.png') no-repeat center top; 
+        background-size: cover; 
+        background-color: #daf1f7; 
+        min-height: 100vh; 
+        background-size: 100% 70%; 
+ 
+    }
+    .left-section {
+        flex: 3; /* 60% de la vista total (3/5) */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+    
+    .right-section {
+        flex: 2; /* 40% de la vista total (2/5) */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 30px;
+    }
+    
+    .result-container {
+        background-color: #ffffff;
+        border-radius: 35px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        padding: 40px;
+        width: 80%; /* 80% del ancho disponible en la sección izquierda */
+        max-width: 600px; /* Limitar el ancho máximo */
+        text-align: center;
+    }
+    
+    .result-title {
+        font-family: 'Antonio', sans-serif;
+        font-size: 3rem;
+        color: #0097B2; /* Naranja */
+        margin-bottom: 10px;
+    }
+    
+    .result-text {
+        font-size: 1.5rem;
+        color: #000000;
+        margin-bottom: 10px;
+    }
+    
+    .result-score {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #0097B2; /* Azul */
+        margin-bottom: 20px;
+    }
+    
+    .character-image {
+        position: absolute;
+    bottom: 0; /* Posiciona la imagen en la parte inferior */
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%); /* Centra la imagen horizontalmente */
+    max-width: 80%;
+    height: auto;
+    }
+    .back-button {
+        font-family: 'Gelasio', serif;
+        padding: 10px 20px;
+        background-color: #0097B2;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }

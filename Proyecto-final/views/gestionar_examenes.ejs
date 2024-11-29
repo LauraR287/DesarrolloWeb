@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Exámenes</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body class="cuerpo_gesionar_examenes">
+    <header class="header">
+        <a href="../views/actividades.html" class="login-btn">Actividades</a>
+        <a href="../views/examenes.html" class="login-btn">Exámenes</a>
+        <a href="../views/perfil.html" class="login-btn">Mi perfil</a>
+        <a href="../views/pantallaPrincipal.html" class="login-btn">Cerrar sesión</a>
+    </header>
+
+    <div class="title-container">
+        <h2 class="page-title">Exámenes</h2>
+    </div>
+    
+    <main>
+        <!-- Crear Examen -->
+        <section id="crear-examen">
+            <h2 class="subtitulo_gestionar_examenes">Crear Nuevo Examen</h2>
+            <form id="form-crear">
+                <label for="titulo">Título del Examen:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+                <button type="submit">Crear Examen</button>
+            </form>
+        </section>
+
+        <!-- Listar Exámenes -->
+        <section id="listar-examenes">
+            <h2 class="subtitulo_gestionar_examenes">Lista de Exámenes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>xs
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Examen de Matemáticas</td>
+                        <td>Examen para evaluar conceptos básicos</td>
+                        <td>
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                            <button class="btn-preguntas">Añadir Preguntas</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Examen de Ciencias</td>
+                        <td>Evaluación de conocimientos generales</td>
+                        <td>
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                            <button class="btn-preguntas">Añadir Preguntas</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    <!-- Botón de navegación -->
+    <div class="botones">
+        <a href="../examenes/menu_examenes.ejs" class="back-button-gestionar">Back</a>
+    </div>
+</body>
+</html>

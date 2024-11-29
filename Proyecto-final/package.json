@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-corte2-kilian",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.3",
+    "nodemon": "^3.1.7",
+    "path": "^0.12.7",
+    "sweet2": "^2.0.0",
+    "sweetalert2": "^11.14.5"
+  }
+}

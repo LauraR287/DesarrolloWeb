@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Gelasio:wght@400;700&display=swap" rel="stylesheet">
+    <title>Create a Topic</title>
+    <script src="/assets/js/aprendizaje.js"></script>
+    <link rel="stylesheet" href="../../assets/css/actividades.css">
+
+</head>
+<body>
+    <div class="background-azul">
+        <button class="next-button" onclick="window.location.href='actividades.html';">Atrás</button>
+        <div class="create-box">
+            <form>
+                <h1 class="page-title-crear">Contenido de la actividad</h1>
+                <br>
+                <hr class="separator-gris">
+
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Ingrese el título del nuevo tema">
+            
+                <label for="seccion">Sección 1:</label>
+                <input type="text" id="titulo_seccion1" name="titulos1" placeholder="Ingrese el título de la sección">
+                <input type="text" id="texto_seccion1" name="textos1" placeholder="Ingrese el texto de la sección">
+            
+                <button event.preventDefault() class="nuevaSeccion-button" type="button" onclick="añadirSeccion()">Añadir sección</button>
+                <br> <br>
+
+                <h1 class="page-title-crear">Preguntas de la actividad</h1>
+                <br>
+                <hr class="separator-gris">
+            
+                <label for="pregunta1">Pregunta 1:</label>
+                <input type="text" id="pregunta1" name="pregunta1" placeholder="Ingrese el enunciado de la pregunta">
+            
+                <label for="respuesta1">Opciones de respuesta:</label>
+            
+                <div class="options">
+                    <input type="radio" id="option1" name="answer" value="1">
+                    <label for="option1">Opción A:</label>
+                    <input type="text" id="respuesta1" name="respuesta1" placeholder="Ingrese la opción de respuesta">
+                </div>
+            
+                <div class="options">
+                    <input type="radio" id="option2" name="answer" value="2">
+                    <label for="option2">Opción B:</label>
+                    <input type="text" id="respuesta2" name="respuesta2" placeholder="Ingrese la opción de respuesta">
+                </div>
+            
+                <div class="options">
+                    <input type="radio" id="option3" name="answer" value="3">
+                    <label for="option3">Opción C:</label>
+                    <input type="text" id="respuesta3" name="respuesta3" placeholder="Ingrese la opción de respuesta">
+                </div>
+            
+                <button event.preventDefault() class="nuevaSeccion-button" type="button" onclick="añadirPregunta()">Añadir pregunta</button>
+            </form>
+            
+        </div>
+    <button class="publicar-button" onclick="publicarActividad()">Publicar</button>
+    </div>
+
+     <!-- Script -->
+     <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+
+            if (id) {
+                // Cambiar el título de la página para indicar que se está editando
+                document.getElementById('titulo-pagina').textContent = 'Editar Actividad';
+
+                try {
+                    // Obtener la actividad del backend
+                    const response = await fetch(`http://localhost:3000/api/actividades/${id}`);
+                    const actividad = await response.json();
+
+                    // Rellenar el formulario con los datos de la actividad
+                    document.getElementById('titulo').value = actividad.titulo;
+
+                    // Rellenar secciones dinámicamente
+                    const seccionesContainer = document.getElementById('secciones-container');
+                    actividad.secciones.forEach((seccion, index) => {
+                        const seccionHtml = `
+                            <div>
+                                <label for="titulo_seccion${index}">Título Sección:</label>
+                                <input type="text" name="titulo_seccion" value="${seccion.titulo}">
+                                <label for="texto_seccion${index}">Texto:</label>
+                                <textarea name="texto_seccion">${seccion.texto}</textarea>
+                            </div>
+                        `;
+                        seccionesContainer.insertAdjacentHTML('beforeend', seccionHtml);
+                    });
+
+                    // Rellenar preguntas dinámicamente
+                    const preguntasContainer = document.getElementById('preguntas-container');
+                    actividad.preguntas.forEach((pregunta, index) => {
+                        const preguntaHtml = `
+                            <div>
+                                <label for="pregunta${index}">Pregunta:</label>
+                                <input type="text" name="pregunta" value="${pregunta.enunciado}">
+                                <label>Opciones:</label>
+                                <div>
+                                    ${pregunta.opciones.map((opcion, i) => `
+                                        <input type="text" name="opcion${index}_${i}" value="${opcion}">
+                                    `).join('')}
+                                </div>
+                            </div>
+                        `;
+                        preguntasContainer.insertAdjacentHTML('beforeend', preguntaHtml);
+                    });
+                } catch (error) {
+                    console.error('Error al cargar la actividad:', error);
+                }
+            }
+
+            // Manejo del formulario
+            document.getElementById('form-actividad').onsubmit = (event) => {
+                event.preventDefault();
+
+                const titulo = document.getElementById('titulo').value;
+                const secciones = Array.from(document.getElementsByName('titulo_seccion')).map((input, index) => ({
+                    titulo: input.value,
+                    texto: document.getElementsByName('texto_seccion')[index].value
+                }));
+                const preguntas = Array.from(document.getElementsByName('pregunta')).map((input, index) => ({
+                    enunciado: input.value,
+                    opciones: Array.from(document.querySelectorAll(`[name^="opcion${index}_"]`)).map(opcion => opcion.value)
+                }));
+
+                const actividad = { titulo, secciones, preguntas };
+
+                if (id) {
+                    actualizarActividad(id, actividad); // Editar si existe un ID
+                } else {
+                    crearActividad(actividad); // Crear si no hay ID
+                }
+            };
+        });
+    </script>
+
+    <script src="aprendizaje.js"></script>
+    
+</body>
+
+</html>
